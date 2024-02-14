@@ -3,9 +3,9 @@ class BlogPostsController < ApplicationController
     before_action :set_blog_post , only: [:show,:edit,:update,:destroy]
     def index
         if user_signed_in?
-            @blog_posts = BlogPost.all
+            @blog_posts = BlogPost.sorted
         else 
-            @blog_posts = BlogPost.published
+            @blog_posts = BlogPost.published.sorted
         end
     end 
     def show 
