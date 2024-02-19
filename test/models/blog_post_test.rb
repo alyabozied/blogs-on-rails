@@ -1,7 +1,8 @@
 require "test_helper"
 
 class BlogPostTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "draft? return true for draft blog post" do
+    binding.irb
+    BlogPost.new(published_at: nil).draft?
+  end
 end
